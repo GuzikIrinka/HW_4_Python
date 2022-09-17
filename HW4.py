@@ -33,8 +33,19 @@
 
 
 
+# 3. Задайте последовательность чисел. Напишите программу, которая выведет список
+# неповторяющихся элементов исходной последовательности.
 
-
-
-
+ex_dann = input('Введите числа через пробел:')
+list = []
+list = ex_dann.split(' ')
+list = [int(ex_dann) for ex_dann in list]
+print('исходный список', list)
+dubb = [x for i, x in enumerate(list) if x in list[:i]]
+print('повтор:', dubb)
+list_res = []
+for numb in list:
+    if numb not in dubb:
+        list_res.append(numb)
+print(list_res)
 
